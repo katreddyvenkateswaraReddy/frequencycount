@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<style>
+        body {
+            color:white;
+            background-image: url("invictus.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+		#num{
+			width:10%;
+			
+
+		}
+	</style>
+	<title>Invictus project for word count</title>
+</head>
+   
+<body>
+	
+	<center>
+		<h1>
+			<b>
+			Enter the number</b><h1>
+				<input type="number" name="number" id="num" placeholder="Enter the number to get top repeated words">
+				<input type="button" name="btn" id="btn" value="Submit" onclick="fun()">
+				<div id="result"></div>
+</center>
+</body>
+
+<script>
+	var txt;
+	var counts = {};
+	var keys = [];
+        function preload() {
+		txt = loadStrings('invic1.txt');
+    }
+
+	function fun() {
+		var allwords = txt.join("\n");
+		var tokens = allwords.split(/\W+/);
+		console.log(tokens);
+		for (var i = 0; i < tokens.length; i++) {
+			var word = tokens[i].toLowerCase();
+			if (!/\d+/.test(word)) {
+				if (counts[word] === undefined) {
+					counts[words] = 1;
+					keys.push(word);
+				} else {
+					counts[word] = count[word] + 1;
+				}
+			}
+			keys.sort(compare);
+			function compare(a, b) {
+				var countA = counts[a];
+				var countB = counts[b];
+				return countB - countA;
+            }
+			for (var i = 0; i < num; i++) {
+				createDiv(keys+" "+counts[key]);
+            }
+		noCanvas();
+    }
+	var n= document.getElementById("num").value;
+	document.getElementById("result").innerHTML ="the top values are "+myText;
+        
+	}
+	
+</script>
+</html>
